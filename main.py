@@ -2,6 +2,11 @@
 # Exercício 04 - Programação II
 # Trabalho feito para gerenciar estoque usando Excel
 
+# Nomes:
+# Heloi Vecchi Sgarbi
+# Kaua Schiavolin Monteiro
+# Leonardo Ferreira
+
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, Alignment
 from datetime import datetime
