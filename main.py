@@ -96,6 +96,11 @@ def criar_cabecalho_relatorios(ws):
 def adicionar_produto(nome_arquivo, codigo, nome, categoria, quantidade, estoque_minimo, preco):
     # adiciona produto novo na planilha
     try:
+        # verificar se o arquivo existe, se nao criar
+        if not os.path.exists(nome_arquivo):
+            print(f"Arquivo não encontrado. Criando '{nome_arquivo}'...")
+            criar_planilha_estoque(nome_arquivo)
+
         wb = load_workbook(nome_arquivo)
         ws = wb["Produtos"]
 
@@ -147,6 +152,11 @@ def adicionar_produto(nome_arquivo, codigo, nome, categoria, quantidade, estoque
 def registrar_movimentacao(nome_arquivo, codigo_produto, tipo, quantidade):
     # registra entrada ou saida de produtos no estoque
     try:
+        # verificar se o arquivo existe, se nao criar
+        if not os.path.exists(nome_arquivo):
+            print(f"Arquivo não encontrado. Criando '{nome_arquivo}'...")
+            criar_planilha_estoque(nome_arquivo)
+
         wb = load_workbook(nome_arquivo)
         ws_produtos = wb["Produtos"]
         ws_movimentacoes = wb["Movimentações"]
@@ -206,6 +216,13 @@ def registrar_movimentacao(nome_arquivo, codigo_produto, tipo, quantidade):
 
 def atualizar_relatorio(nome_arquivo):
     # atualiza a aba de relatorios com as estatisticas
+
+    # verificar se o arquivo existe
+    if not os.path.exists(nome_arquivo):
+        print(f"ERRO: Arquivo '{nome_arquivo}' não encontrado!")
+        print("Adicione produtos primeiro para criar a planilha.")
+        return False
+
     try:
         wb = load_workbook(nome_arquivo)
         ws_relatorios = wb["Relatórios"]
@@ -289,6 +306,13 @@ def atualizar_relatorio(nome_arquivo):
 
 def listar_produtos(nome_arquivo):
     # mostra todos os produtos que tem no estoque
+
+    # verificar se o arquivo existe
+    if not os.path.exists(nome_arquivo):
+        print(f"\nERRO: Arquivo '{nome_arquivo}' não encontrado!")
+        print("Adicione produtos primeiro para criar a planilha.")
+        return
+
     try:
         wb = load_workbook(nome_arquivo)
         ws = wb["Produtos"]
