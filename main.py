@@ -245,14 +245,14 @@ def atualizar_relatorio(nome_arquivo):
 
         # formula para calcular valor total do estoque
         if num_produtos > 0:
-            ws_relatorios['B5'] = f"=SOMA(Produtos!G2:G{ws_produtos.max_row})"
+            ws_relatorios['B5'] = f"=SUM(Produtos!G2:G{ws_produtos.max_row})"
             ws_relatorios['B5'].number_format = 'R$ #,##0.00'
         else:
             ws_relatorios['B5'] = "R$ 0,00"
 
         # contar produtos com estoque baixo
         if num_produtos > 0:
-            ws_relatorios['B6'] = f'=CONT.SE(Produtos!H2:H{ws_produtos.max_row},"BAIXO")'
+            ws_relatorios['B6'] = f'=COUNTIF(Produtos!H2:H{ws_produtos.max_row},"BAIXO")'
         else:
             ws_relatorios['B6'] = 0
 
