@@ -2,10 +2,10 @@
 ## Exercício 04 - Programação II
 
 Sistema para gerenciar estoque usando Python e Excel (biblioteca openpyxl).
-Feito por:
-Heloi Vecchi Sgarbi
-Kaua Schiavolin Monteiro
-Leonardo Ferreira
+- Feito por:
+- Heloi Vecchi Sgarbi
+- Kaua Schiavolin Monteiro
+- Leonardo Ferreira
 ---
 
 ## O que faz
