@@ -1,0 +1,9 @@
+executar.sh
+instalar_biblioteca.py
+instalar.sh
+DADOS_TESTE.txt
+ESTRUTURA_PROJETO.txt
+controle_estoque.xlsx
+*.xlsx
+__pycache__/
+*.pyc
