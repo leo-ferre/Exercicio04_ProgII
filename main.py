@@ -96,11 +96,6 @@ def criar_cabecalho_relatorios(ws):
 def adicionar_produto(nome_arquivo, codigo, nome, categoria, quantidade, estoque_minimo, preco):
     # adiciona produto novo na planilha
     try:
-        # verificar se o arquivo existe, se nao criar
-        if not os.path.exists(nome_arquivo):
-            print(f"Arquivo não encontrado. Criando '{nome_arquivo}'...")
-            criar_planilha_estoque(nome_arquivo)
-
         wb = load_workbook(nome_arquivo)
         ws = wb["Produtos"]
 
@@ -152,11 +147,6 @@ def adicionar_produto(nome_arquivo, codigo, nome, categoria, quantidade, estoque
 def registrar_movimentacao(nome_arquivo, codigo_produto, tipo, quantidade):
     # registra entrada ou saida de produtos no estoque
     try:
-        # verificar se o arquivo existe, se nao criar
-        if not os.path.exists(nome_arquivo):
-            print(f"Arquivo não encontrado. Criando '{nome_arquivo}'...")
-            criar_planilha_estoque(nome_arquivo)
-
         wb = load_workbook(nome_arquivo)
         ws_produtos = wb["Produtos"]
         ws_movimentacoes = wb["Movimentações"]
